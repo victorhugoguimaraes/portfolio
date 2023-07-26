@@ -478,7 +478,7 @@ background-color: hsl(var(--hue), 8%, 16%);
 
     .change-theme{
         top: 2.5rem;
-        right: 5rem;
+        right: .01rem;
     }
 
     .profile{
