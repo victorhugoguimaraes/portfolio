@@ -12,7 +12,7 @@ Se você quiser contribuir com este projeto ou reportar problemas, fique à vont
 
 ## Licença
 
-Este projeto está licenciado sob a Victor Guimarães - 2022.
+Este projeto está licenciado sob a Victor Guimarães - 2023.
 
 
  <img alt="PrintSite" title="#PrintSite" src="assets/imagens/projeto2.png" />
