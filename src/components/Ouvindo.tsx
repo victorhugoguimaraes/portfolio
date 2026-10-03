@@ -4,14 +4,14 @@ import type { DadosSpotify, Faixa } from '../data/tipos'
 /* ------------------------------------------------------------------------
    O que está tocando no Spotify.
 
-   A lista crua não dizia nada. Agora cada faixa vem com a capa do álbum, o
-   que dá peso visual e deixa a seção parecida com a prateleira de filmes
-   logo acima. Tudo linka para o Spotify.
+   Mesma anatomia dos outros dois blocos de "consumindo": capa, título e uma
+   linha de crédito — nada de lista horizontal, que era o que destoava dos
+   filmes e dos livros.
    ------------------------------------------------------------------------ */
 
 function Capa({ faixa, classe }: { faixa: Faixa; classe: string }) {
   const [falhou, setFalhou] = useState(false)
-  const base = `${classe} shrink-0 border border-rule bg-rule/25 object-cover`
+  const base = `${classe} border border-rule bg-rule/25 object-cover`
   const capas = (faixa.capas ?? []).filter((c) => c && c.url)
   if (!capas.length || falhou) return <span aria-hidden="true" className={base} />
 
@@ -25,7 +25,7 @@ function Capa({ faixa, classe }: { faixa: Faixa; classe: string }) {
       // O Spotify oferece 64 px (3,7 KB) e 300 px (54 KB). Com srcset o
       // navegador baixa a pequena em tela comum e a grande só no retina.
       srcSet={medidas.length > 1 ? medidas.map((c) => `${c.url} ${c.w}w`).join(', ') : undefined}
-      sizes={medidas.length > 1 ? '44px' : undefined}
+      sizes={medidas.length > 1 ? '140px' : undefined}
       alt=""
       // Sem lazy: a seção fica abaixo da dobra e as capas apareciam vazias.
       loading="eager"
@@ -37,47 +37,51 @@ function Capa({ faixa, classe }: { faixa: Faixa; classe: string }) {
   )
 }
 
-function Item({ faixa, destaque = false }: { faixa: Faixa; destaque?: boolean }) {
-  return (
-    <a
-      href={faixa.link}
-      target="_blank"
-      rel="noreferrer noopener"
-      className="flex items-center gap-3 no-underline"
-    >
-      <Capa faixa={faixa} classe="h-11 w-11" />
-      <span className="min-w-0">
-        <span className="block truncate leading-snug">{faixa.faixa}</span>
-        <span className="block truncate text-[13px] text-muted">{faixa.artistas}</span>
-        {destaque && (
-          <span className="font-display mt-1 flex items-center gap-1.5 text-[11px] leading-none text-ball">
-            <span aria-hidden="true" className="h-[5px] w-[5px] bg-ball" />
-            tocando agora
-          </span>
-        )}
-      </span>
-    </a>
-  )
-}
-
 export default function Ouvindo({ dados }: { dados: DadosSpotify }) {
   const temAlgo = Boolean(dados.tocandoAgora) || (dados.recentes?.length ?? 0) > 0
   if (!temAlgo) return null
+
+  const agora = dados.tocandoAgora
 
   return (
     <>
       <p className="font-display mb-3 mt-8 text-[12px] leading-none text-muted">ouvindo</p>
 
-      {dados.tocandoAgora && (
-        <div className="mb-4 border-l-2 border-ball pl-3">
-          <Item faixa={dados.tocandoAgora} destaque />
-        </div>
+      {/* Tocando agora: uma faixa, destacada, no mesmo formato dos outros. */}
+      {agora && (
+        <a
+          href={agora.link}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="mb-4 flex max-w-[68ch] items-center gap-3 border-l-2 border-ball pl-3 no-underline"
+        >
+          <Capa faixa={agora} classe="h-12 w-12 shrink-0" />
+          <span className="min-w-0">
+            <span className="block truncate leading-snug">{agora.faixa}</span>
+            <span className="block truncate text-[13px] text-muted">{agora.artistas}</span>
+            <span className="font-display mt-1 flex items-center gap-1.5 text-[11px] leading-none text-ball">
+              <span aria-hidden="true" className="h-[5px] w-[5px] bg-ball" />
+              tocando agora
+            </span>
+          </span>
+        </a>
       )}
 
-      <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
+      <ul className="grid grid-cols-3 gap-3 sm:grid-cols-6 sm:gap-4">
         {dados.recentes.slice(0, 6).map((f) => (
           <li key={f.link}>
-            <Item faixa={f} />
+            <a
+              href={f.link}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="block no-underline"
+            >
+              <Capa faixa={f} classe="aspect-square w-full" />
+              <p className="mt-1.5 line-clamp-2 min-h-[1.9rem] text-[12px] leading-tight">
+                {f.faixa}
+              </p>
+              <p className="line-clamp-1 text-[11px] leading-tight text-muted">{f.artistas}</p>
+            </a>
           </li>
         ))}
       </ul>

@@ -249,21 +249,25 @@ export default function App() {
           {/* Empilhado em vez de duas colunas: as colunas laterais tinham
               alturas muito diferentes e sobrava um branco grande embaixo. */}
           <p className="font-display mb-3 text-[12px] leading-none text-muted">lendo</p>
-          <ul className="grid gap-x-8 gap-y-6 sm:grid-cols-3">
+          {/* Mesma grade de 6 colunas dos outros dois blocos. Como são só 3
+              livros, cada um ocupa 2 colunas no desktop — assim a fileira fica
+              cheia em vez de sobrar metade vazia. */}
+          <ul className="grid grid-cols-3 gap-3 sm:grid-cols-6 sm:gap-4">
             {leituras.map((l) => (
-              <li key={l.titulo}>
+              <li key={l.titulo} className="sm:col-span-2">
                 <CapaLivro livro={l} />
-                <p className="mt-2 leading-snug">{l.titulo}</p>
-                <p className="text-[13px] text-muted">{l.autor}</p>
-                <p className="font-display mt-1 text-[11px] leading-none text-muted">
-                  {l.situacao}, {l.assunto}
+                <p className="mt-1.5 line-clamp-2 min-h-[1.9rem] text-[12px] leading-tight">
+                  {l.titulo}
+                </p>
+                <p className="line-clamp-1 text-[11px] leading-tight text-muted">
+                  {l.autor}, {l.situacao}
                 </p>
               </li>
             ))}
           </ul>
 
           <p className="font-display mb-3 mt-8 text-[12px] leading-none text-muted">assistindo</p>
-          <ul className="grid grid-cols-3 gap-x-3 gap-y-4 sm:grid-cols-6 sm:gap-x-4">
+          <ul className="grid grid-cols-3 gap-3 sm:grid-cols-6 sm:gap-4">
             {filmes.slice(0, 6).map((f) => (
               <li key={f.link}>
                 <a
@@ -275,10 +279,10 @@ export default function App() {
                   <Capa filme={f} />
                   {/* Altura mínima igual em todos: sem isso os títulos de
                       duas e três linhas desalinham as fileiras da grade. */}
-                  <p className="mt-1.5 line-clamp-3 min-h-[2.7rem] text-[11px] leading-tight">
+                  <p className="mt-1.5 line-clamp-2 min-h-[1.9rem] text-[12px] leading-tight">
                     {f.titulo}
                   </p>
-                  <p className="font-display text-[10px] leading-tight text-muted">
+                  <p className="line-clamp-1 text-[11px] leading-tight text-muted">
                     {f.ano} <Estrela nota={f.nota} />
                   </p>
                 </a>
