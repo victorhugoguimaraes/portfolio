@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="victor guimaraes">
-  <rect width="40" height="40" rx="9" fill="#2e6b4f"/>
-  <g fill="#f6f5f2">
-  <rect x="16.7" y="8.7" width="6.6" height="6.6" rx="1.4"/>
-  <rect x="24.7" y="8.7" width="6.6" height="6.6" rx="1.4"/>
-  <rect x="8.7" y="16.7" width="6.6" height="6.6" rx="1.4"/>
-  <rect x="24.7" y="16.7" width="6.6" height="6.6" rx="1.4"/>
-  <rect x="8.7" y="24.7" width="6.6" height="6.6" rx="1.4"/>
-  <rect x="16.7" y="24.7" width="6.6" height="6.6" rx="1.4"/>
+  <rect width="40" height="40" rx="9" fill="#111111"/>
+  <g fill="#6f6f6f">
+  <rect x="17.4" y="9.4" width="6.6" height="6.6" rx="1.4"/>
+  <rect x="25.4" y="9.4" width="6.6" height="6.6" rx="1.4"/>
+  <rect x="9.4" y="17.4" width="6.6" height="6.6" rx="1.4"/>
+  <rect x="25.4" y="17.4" width="6.6" height="6.6" rx="1.4"/>
+  <rect x="9.4" y="25.4" width="6.6" height="6.6" rx="1.4"/>
+  <rect x="17.4" y="25.4" width="6.6" height="6.6" rx="1.4"/>
   </g>
-  <g fill="#c98a2e">
-  <rect x="8.7" y="8.7" width="6.6" height="6.6" rx="1.4"/>
-  <rect x="16.7" y="16.7" width="6.6" height="6.6" rx="1.4"/>
-  <rect x="24.7" y="24.7" width="6.6" height="6.6" rx="1.4"/>
+  <g fill="#ffffff">
+  <rect x="8.9" y="8.9" width="7.6" height="7.6" rx="1.4"/>
+  <rect x="16.9" y="16.9" width="7.6" height="7.6" rx="1.4"/>
+  <rect x="24.9" y="24.9" width="7.6" height="7.6" rx="1.4"/>
   </g>
 </svg>
