@@ -1,0 +1,620 @@
+{
+ "filmes": [
+  {
+   "id": 1000046,
+   "nome": "The Godfather",
+   "ano": 1972,
+   "nota": 4.55,
+   "generos": [
+    "Crime",
+    "Drama"
+   ]
+  },
+  {
+   "id": 1000010,
+   "nome": "Pulp Fiction",
+   "ano": 1994,
+   "nota": 4.26,
+   "generos": [
+    "Crime",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000004,
+   "nome": "Fight Club",
+   "ano": 1999,
+   "nota": 4.27,
+   "generos": [
+    "Drama"
+   ]
+  },
+  {
+   "id": 1000091,
+   "nome": "GoodFellas",
+   "ano": 1990,
+   "nota": 4.48,
+   "generos": [
+    "Crime",
+    "Drama"
+   ]
+  },
+  {
+   "id": 1000158,
+   "nome": "Reservoir Dogs",
+   "ano": 1992,
+   "nota": 4.15,
+   "generos": [
+    "Crime",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000226,
+   "nome": "Scarface",
+   "ano": 1983,
+   "nota": 4.11,
+   "generos": [
+    "Action",
+    "Crime",
+    "Drama"
+   ]
+  },
+  {
+   "id": 1000319,
+   "nome": "City of God",
+   "ano": 2002,
+   "nota": 4.53,
+   "generos": [
+    "Crime",
+    "Drama"
+   ]
+  },
+  {
+   "id": 1000039,
+   "nome": "Se7en",
+   "ano": 1995,
+   "nota": 4.33,
+   "generos": [
+    "Crime",
+    "Mystery",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000166,
+   "nome": "Oldboy",
+   "ano": 2003,
+   "nota": 4.39,
+   "generos": [
+    "Action",
+    "Drama",
+    "Mystery",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000114,
+   "nome": "Prisoners",
+   "ano": 2013,
+   "nota": 4.29,
+   "generos": [
+    "Crime",
+    "Drama",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000032,
+   "nome": "Gone Girl",
+   "ano": 2014,
+   "nota": 4.07,
+   "generos": [
+    "Drama",
+    "Mystery",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000130,
+   "nome": "Nightcrawler",
+   "ano": 2014,
+   "nota": 4.04,
+   "generos": [
+    "Crime",
+    "Drama",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000141,
+   "nome": "Zodiac",
+   "ano": 2007,
+   "nota": 4.02,
+   "generos": [
+    "Crime",
+    "Drama",
+    "Mystery",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000227,
+   "nome": "Léon: The Professional",
+   "ano": 1994,
+   "nota": 4.03,
+   "generos": [
+    "Action",
+    "Crime",
+    "Drama"
+   ]
+  },
+  {
+   "id": 1000076,
+   "nome": "Drive",
+   "ano": 2011,
+   "nota": 3.94,
+   "generos": [
+    "Crime",
+    "Drama",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000157,
+   "nome": "Blade Runner",
+   "ano": 1982,
+   "nota": 4.1,
+   "generos": [
+    "Drama",
+    "Science Fiction",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000064,
+   "nome": "Arrival",
+   "ano": 2016,
+   "nota": 4.12,
+   "generos": [
+    "Drama",
+    "Mystery",
+    "Science Fiction"
+   ]
+  },
+  {
+   "id": 1000009,
+   "nome": "Dune",
+   "ano": 2021,
+   "nota": 3.9,
+   "generos": [
+    "Adventure",
+    "Science Fiction"
+   ]
+  },
+  {
+   "id": 1000007,
+   "nome": "Interstellar",
+   "ano": 2014,
+   "nota": 4.35,
+   "generos": [
+    "Adventure",
+    "Drama",
+    "Science Fiction"
+   ]
+  },
+  {
+   "id": 1000052,
+   "nome": "Her",
+   "ano": 2013,
+   "nota": 4.02,
+   "generos": [
+    "Drama",
+    "Romance",
+    "Science Fiction"
+   ]
+  },
+  {
+   "id": 1000057,
+   "nome": "The Matrix",
+   "ano": 1999,
+   "nota": 4.16,
+   "generos": [
+    "Action",
+    "Science Fiction"
+   ]
+  },
+  {
+   "id": 1000144,
+   "nome": "Alien",
+   "ano": 1979,
+   "nota": 4.27,
+   "generos": [
+    "Horror",
+    "Science Fiction"
+   ]
+  },
+  {
+   "id": 1000109,
+   "nome": "2001: A Space Odyssey",
+   "ano": 1968,
+   "nota": 4.3,
+   "generos": [
+    "Adventure",
+    "Mystery",
+    "Science Fiction"
+   ]
+  },
+  {
+   "id": 1000003,
+   "nome": "Everything Everywhere All at Once",
+   "ano": 2022,
+   "nota": 4.3,
+   "generos": [
+    "Action",
+    "Adventure",
+    "Comedy",
+    "Science Fiction"
+   ]
+  },
+  {
+   "id": 1000029,
+   "nome": "Eternal Sunshine of the Spotless Mind",
+   "ano": 2004,
+   "nota": 4.25,
+   "generos": [
+    "Drama",
+    "Romance",
+    "Science Fiction"
+   ]
+  },
+  {
+   "id": 1000030,
+   "nome": "Spirited Away",
+   "ano": 2001,
+   "nota": 4.45,
+   "generos": [
+    "Animation",
+    "Family",
+    "Fantasy"
+   ]
+  },
+  {
+   "id": 1000133,
+   "nome": "My Neighbor Totoro",
+   "ano": 1988,
+   "nota": 4.19,
+   "generos": [
+    "Animation",
+    "Family",
+    "Fantasy"
+   ]
+  },
+  {
+   "id": 1000338,
+   "nome": "Kiki's Delivery Service",
+   "ano": 1989,
+   "nota": 4.13,
+   "generos": [
+    "Animation",
+    "Family",
+    "Fantasy"
+   ]
+  },
+  {
+   "id": 1000349,
+   "nome": "Ponyo",
+   "ano": 2008,
+   "nota": 4.06,
+   "generos": [
+    "Animation",
+    "Family",
+    "Fantasy"
+   ]
+  },
+  {
+   "id": 1000094,
+   "nome": "Howl's Moving Castle",
+   "ano": 2004,
+   "nota": 4.32,
+   "generos": [
+    "Adventure",
+    "Animation",
+    "Fantasy"
+   ]
+  },
+  {
+   "id": 1000134,
+   "nome": "Toy Story",
+   "ano": 1995,
+   "nota": 4.12,
+   "generos": [
+    "Adventure",
+    "Animation",
+    "Comedy",
+    "Family"
+   ]
+  },
+  {
+   "id": 1000014,
+   "nome": "Get Out",
+   "ano": 2017,
+   "nota": 4.16,
+   "generos": [
+    "Horror",
+    "Mystery",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000050,
+   "nome": "Hereditary",
+   "ano": 2018,
+   "nota": 3.97,
+   "generos": [
+    "Horror",
+    "Mystery",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000034,
+   "nome": "The Shining",
+   "ano": 1980,
+   "nota": 4.24,
+   "generos": [
+    "Horror",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000242,
+   "nome": "The Thing",
+   "ano": 1982,
+   "nota": 4.35,
+   "generos": [
+    "Horror",
+    "Mystery",
+    "Science Fiction"
+   ]
+  },
+  {
+   "id": 1000174,
+   "nome": "Psycho",
+   "ano": 1960,
+   "nota": 4.32,
+   "generos": [
+    "Horror",
+    "Mystery",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000024,
+   "nome": "The Grand Budapest Hotel",
+   "ano": 2014,
+   "nota": 4.24,
+   "generos": [
+    "Comedy",
+    "Drama"
+   ]
+  },
+  {
+   "id": 1000225,
+   "nome": "The Big Lebowski",
+   "ano": 1998,
+   "nota": 4.13,
+   "generos": [
+    "Comedy",
+    "Crime"
+   ]
+  },
+  {
+   "id": 1000468,
+   "nome": "Groundhog Day",
+   "ano": 1993,
+   "nota": 3.83,
+   "generos": [
+    "Comedy",
+    "Drama",
+    "Fantasy",
+    "Romance"
+   ]
+  },
+  {
+   "id": 1000145,
+   "nome": "Superbad",
+   "ano": 2007,
+   "nota": 3.88,
+   "generos": [
+    "Comedy"
+   ]
+  },
+  {
+   "id": 1000903,
+   "nome": "Annie Hall",
+   "ano": 1977,
+   "nota": 4.04,
+   "generos": [
+    "Comedy",
+    "Drama",
+    "Romance"
+   ]
+  },
+  {
+   "id": 1000180,
+   "nome": "Amélie",
+   "ano": 2001,
+   "nota": 4.17,
+   "generos": [
+    "Comedy",
+    "Romance"
+   ]
+  },
+  {
+   "id": 1000162,
+   "nome": "Before Sunrise",
+   "ano": 1995,
+   "nota": 4.33,
+   "generos": [
+    "Drama",
+    "Romance"
+   ]
+  },
+  {
+   "id": 1000275,
+   "nome": "In the Mood for Love",
+   "ano": 2000,
+   "nota": 4.4,
+   "generos": [
+    "Drama",
+    "Romance"
+   ]
+  },
+  {
+   "id": 1000005,
+   "nome": "La La Land",
+   "ano": 2016,
+   "nota": 4.09,
+   "generos": [
+    "Comedy",
+    "Drama",
+    "Music",
+    "Romance"
+   ]
+  },
+  {
+   "id": 1000012,
+   "nome": "Whiplash",
+   "ano": 2014,
+   "nota": 4.43,
+   "generos": [
+    "Drama",
+    "Music"
+   ]
+  },
+  {
+   "id": 1000072,
+   "nome": "Mad Max: Fury Road",
+   "ano": 2015,
+   "nota": 4.19,
+   "generos": [
+    "Action",
+    "Adventure",
+    "Science Fiction"
+   ]
+  },
+  {
+   "id": 1000167,
+   "nome": "John Wick",
+   "ano": 2014,
+   "nota": 3.81,
+   "generos": [
+    "Action",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000304,
+   "nome": "Die Hard",
+   "ano": 1988,
+   "nota": 4.07,
+   "generos": [
+    "Action",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000458,
+   "nome": "Terminator 2: Judgment Day",
+   "ano": 1991,
+   "nota": 4.28,
+   "generos": [
+    "Action",
+    "Science Fiction",
+    "Thriller"
+   ]
+  },
+  {
+   "id": 1000278,
+   "nome": "Raiders of the Lost Ark",
+   "ano": 1981,
+   "nota": 4.16,
+   "generos": [
+    "Action",
+    "Adventure"
+   ]
+  },
+  {
+   "id": 1000067,
+   "nome": "The Lord of the Rings: The Fellowship of the Ring",
+   "ano": 2001,
+   "nota": 4.37,
+   "generos": [
+    "Action",
+    "Adventure",
+    "Fantasy"
+   ]
+  },
+  {
+   "id": 1000082,
+   "nome": "Star Wars",
+   "ano": 1977,
+   "nota": 4.17,
+   "generos": [
+    "Action",
+    "Adventure",
+    "Science Fiction"
+   ]
+  },
+  {
+   "id": 1000262,
+   "nome": "Apocalypse Now",
+   "ano": 1979,
+   "nota": 4.44,
+   "generos": [
+    "Drama",
+    "War"
+   ]
+  },
+  {
+   "id": 1000248,
+   "nome": "Saving Private Ryan",
+   "ano": 1998,
+   "nota": 4.24,
+   "generos": [
+    "Drama",
+    "History",
+    "War"
+   ]
+  },
+  {
+   "id": 1000445,
+   "nome": "The Good, the Bad and the Ugly",
+   "ano": 1966,
+   "nota": 4.5,
+   "generos": [
+    "Western"
+   ]
+  },
+  {
+   "id": 1001069,
+   "nome": "Once Upon a Time in the West",
+   "ano": 1968,
+   "nota": 4.39,
+   "generos": [
+    "Drama",
+    "Western"
+   ]
+  },
+  {
+   "id": 1001174,
+   "nome": "Unforgiven",
+   "ano": 1992,
+   "nota": 4.2,
+   "generos": [
+    "Western"
+   ]
+  }
+ ]
+}

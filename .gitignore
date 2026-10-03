@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.vite/
+.DS_Store
+tsconfig.tsbuildinfo
+
+# Credenciais — nenhuma variação destes arquivos pode ser versionada.
+.env
+.env.*
+*.local

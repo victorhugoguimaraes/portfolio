@@ -1,0 +1,87 @@
+name: publicar
+
+# Um workflow só, para não haver dois escrevendo nos mesmos arquivos.
+#
+# Ele NUNCA commita nada: sincroniza os dados, gera o site e publica. Assim o
+# repositório fica só com o código, e não existe mais a divergência entre o que
+# você tem localmente e o que está no remoto.
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # A cada 6 horas, para o Letterboxd e o Spotify não envelhecerem. Cron em UTC.
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Instalar o Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          # Versão fixa de propósito. Com "latest" a action consulta a API do
+          # GitHub para listar as tags a cada execução — e uma vez isso
+          # devolveu 503 e derrubou a publicação inteira. Fixa também deixa o
+          # build reproduzível.
+          bun-version: 1.3.11
+
+      - name: Instalar dependências
+        run: bun install --frozen-lockfile
+
+      - name: Sincronizar Letterboxd e Spotify
+        id: sincronizar
+        # Se o Letterboxd ou o Spotify estiverem fora do ar, o site ainda é
+        # publicado com os dados que já estão no repositório. O aviso abaixo
+        # deixa a falha visível sem bloquear a publicação.
+        continue-on-error: true
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+        run: bun run sincronizar
+
+      - name: Avisar se a sincronização falhou
+        if: steps.sincronizar.outcome == 'failure'
+        run: |
+          echo "::warning::A sincronização falhou. O site foi publicado com os dados anteriores."
+
+      - name: Checar tipos e rodar os testes
+        run: |
+          bunx tsc --noEmit
+          bun test
+
+      - name: Gerar o site
+        run: bun run build
+
+      - name: Configurar o Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empacotar o resultado
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Publicar
+        id: deploy
+        uses: actions/deploy-pages@v4

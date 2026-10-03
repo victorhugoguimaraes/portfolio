@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="./icone.svg" type="image/svg+xml" />
+    <link rel="icon" href="./icone-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <title>victor guimaraes portfolio</title>
+    <meta
+      name="description"
+      content="Portfólio de Victor Guimarães — Engenharia de Redes de Comunicação na UnB, com foco em dados e machine learning."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="victor guimaraes portfolio" />
+    <meta
+      property="og:description"
+      content="Engenharia de Redes de Comunicação na UnB, com foco em dados e machine learning."
+    />
+    <meta property="og:url" content="https://victorhugoguimaraes.github.io/portfolio/" />
+    <script>
+      // Evita o flash de tema errado antes do React montar.
+      // Aceita ?tema=escuro para link direto em um tema específico.
+      (function () {
+        try {
+          var daUrl = new URLSearchParams(location.search).get('tema')
+          var escolhido = daUrl || localStorage.getItem('tema')
+          if (escolhido === 'escuro') document.documentElement.classList.add('dark')
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
