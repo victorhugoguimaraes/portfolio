@@ -6,7 +6,8 @@ Site pessoal — Victor Hugo G. Nascimento.
 
 ## O que tem
 
-- **sobre, formação, contato e agora** — quem sou e o que estou fazendo
+- **contato e currículo no cabeçalho** — e-mail, GitHub, LinkedIn e o PDF, visíveis sem rolar
+- **sobre, formação e agora** — quem sou e o que estou fazendo
 - **o projeto de dados** — recomendador de filmes com TF-IDF e similaridade de cosseno, calculado no navegador
 - **o futebol simulado** — campo 2D com a física do simulador da RoboCup
 - **outros projetos** — o resto do que está no meu GitHub

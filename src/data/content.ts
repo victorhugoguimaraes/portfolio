@@ -6,7 +6,6 @@ export const perfil = {
   resumo: 'dados · machine learning',
   email: 'victorguinascimento@gmail.com',
   github: 'https://github.com/victorhugoguimaraes',
-  githubUsuario: 'victorhugoguimaraes',
   linkedin: 'https://www.linkedin.com/in/victor-hugo-guimar%C3%A3es-nascimento',
   // Caminho relativo: funciona tanto na raiz quanto em subpasta (GitHub Pages).
   curriculo: './curriculo.pdf',

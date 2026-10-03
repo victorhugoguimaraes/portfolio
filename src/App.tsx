@@ -126,12 +126,37 @@ export default function App() {
 
   return (
     <div className="mx-auto w-full max-w-[880px] px-6 py-12 sm:px-8 sm:py-16">
-      <header className="flex items-baseline justify-between gap-4">
-        <div>
+      {/* O contato fica no cabeçalho: é a primeira coisa que se vê, e assim
+          não interrompe o meio da página — "sobre" segue sendo a 1ª seção.
+          No celular o toggle sobe para junto do nome e o contato desce para
+          uma linha própria; sem isso o e-mail + o botão estouravam a largura
+          em telas de 320 px. */}
+      <header className="flex flex-wrap items-start justify-between gap-x-4 gap-y-3 sm:gap-x-8">
+        <div className="order-1">
           <h1 className="font-display text-[20px] leading-none">{perfil.nome}</h1>
           <p className="font-display mt-2 text-[12px] leading-none text-muted">{perfil.resumo}</p>
         </div>
-        <ThemeToggle />
+
+        <div className="order-2 ml-auto sm:order-3 sm:ml-0">
+          <ThemeToggle />
+        </div>
+
+        <ul className="order-3 flex w-full flex-wrap gap-x-4 gap-y-1 font-display text-[12px] leading-none sm:order-2 sm:w-auto sm:flex-col sm:items-end sm:gap-y-2 sm:text-right">
+          <li>
+            <a href={`mailto:${perfil.email}`}>{perfil.email}</a>
+          </li>
+          <li className="flex flex-wrap gap-x-4 gap-y-1">
+            <a href={perfil.github} target="_blank" rel="noreferrer noopener">
+              github
+            </a>
+            <a href={perfil.linkedin} target="_blank" rel="noreferrer noopener">
+              linkedin
+            </a>
+            <a href={perfil.curriculo} download="VictorHugoGuimaraesNascimento-Curriculo.pdf">
+              currículo (PDF)
+            </a>
+          </li>
+        </ul>
       </header>
 
       <main>
@@ -159,30 +184,6 @@ export default function App() {
                 <span className="font-display text-[12px] text-muted">{c.emissor}</span>
               </li>
             ))}
-          </ul>
-        </Secao>
-
-        {/* ---------------- contato ---------------- */}
-        <Secao titulo="contato">
-          <ul className="font-display space-y-2 text-[15px] leading-none">
-            <li>
-              <a href={`mailto:${perfil.email}`}>{perfil.email}</a>
-            </li>
-            <li>
-              <a href={perfil.github} target="_blank" rel="noreferrer noopener">
-                github.com/{perfil.githubUsuario}
-              </a>
-            </li>
-            <li>
-              <a href={perfil.linkedin} target="_blank" rel="noreferrer noopener">
-                linkedin
-              </a>
-            </li>
-            <li>
-              <a href={perfil.curriculo} download="VictorHugoGuimaraesNascimento-Curriculo.pdf">
-                baixar currículo (PDF)
-              </a>
-            </li>
           </ul>
         </Secao>
 
