@@ -14,6 +14,7 @@ import {
   projetoFutebol,
   robocup,
   sobre,
+  type Leitura,
   type Projeto,
 } from './data/content'
 import type { DadosLetterboxd, DadosSpotify } from './data/tipos'
@@ -59,8 +60,37 @@ function FichaProjeto({ p }: { p: Projeto }) {
   )
 }
 
-/** Nota do Letterboxd: 4.5 vira "★ 4,5". */
-function Estrela({ nota }: { nota: number | null }) {
+/**
+ * Capa do livro. Sem capa (ou se a imagem falhar), desenha uma capa
+ * tipográfica no lugar — melhor que um retângulo vazio.
+ */
+function CapaLivro({ livro }: { livro: Leitura }) {
+  const [falhou, setFalhou] = useState(false)
+
+  if (!livro.capa || falhou) {
+    return (
+      <div className="flex aspect-[2/3] w-full flex-col justify-center gap-2 border border-rule bg-field/10 p-4">
+        <span className="font-display text-[13px] leading-tight">{livro.titulo}</span>
+        <span className="text-[12px] leading-tight text-muted">{livro.autor}</span>
+      </div>
+    )
+  }
+
+  return (
+    <img
+      src={livro.capa}
+      alt={`Capa de ${livro.titulo}`}
+      // Sem lazy: a seção fica abaixo da dobra e as capas apareciam vazias.
+      loading="eager"
+      decoding="async"
+      referrerPolicy="no-referrer"
+      onError={() => setFalhou(true)}
+      className="aspect-[2/3] w-full border border-rule bg-rule/25 object-cover"
+    />
+  )
+}
+
+/** Nota do Letterboxd: 4.5 vira "★ 4,5". */function Estrela({ nota }: { nota: number | null }) {
   if (nota === null) return null
   return (
     <span className="text-ball tabular-nums" title={`Nota ${nota} de 5`}>
@@ -219,12 +249,13 @@ export default function App() {
           {/* Empilhado em vez de duas colunas: as colunas laterais tinham
               alturas muito diferentes e sobrava um branco grande embaixo. */}
           <p className="font-display mb-3 text-[12px] leading-none text-muted">lendo</p>
-          <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-3">
+          <ul className="grid gap-x-8 gap-y-6 sm:grid-cols-3">
             {leituras.map((l) => (
               <li key={l.titulo}>
-                <p className="leading-snug">{l.titulo}</p>
-                <p className="mt-0.5 text-[13px] text-muted">{l.autor}</p>
-                <p className="font-display mt-1.5 text-[11px] leading-none text-muted">
+                <CapaLivro livro={l} />
+                <p className="mt-2 leading-snug">{l.titulo}</p>
+                <p className="text-[13px] text-muted">{l.autor}</p>
+                <p className="font-display mt-1 text-[11px] leading-none text-muted">
                   {l.situacao}, {l.assunto}
                 </p>
               </li>

@@ -96,6 +96,14 @@ export type Leitura = {
   autor: string
   assunto: 'dados' | 'economia' | 'literatura'
   situacao: 'lendo' | 'lido'
+  /**
+   * Capa, do acervo aberto do Open Library (covers.openlibrary.org).
+   * Conferi cada uma na mão: a busca automática do acervo erra muito — para
+   * "Norwegian Wood" ela devolveu uma edição alemã e, noutra consulta, um
+   * livro completamente diferente do mesmo autor.
+   * Sem capa, o site desenha uma capa tipográfica no lugar.
+   */
+  capa?: string
 }
 
 export const leituras: Leitura[] = [
@@ -104,18 +112,23 @@ export const leituras: Leitura[] = [
     autor: 'Aurélien Géron',
     assunto: 'dados',
     situacao: 'lendo',
+    capa: 'https://covers.openlibrary.org/b/id/15138297-L.jpg',
   },
   {
     titulo: 'Economia: modo de usar',
     autor: 'Ha-Joon Chang',
     assunto: 'economia',
     situacao: 'lendo',
+    capa: 'https://covers.openlibrary.org/b/id/12370900-L.jpg',
   },
   {
     titulo: 'Norwegian Wood',
     autor: 'Haruki Murakami',
     assunto: 'literatura',
     situacao: 'lido',
+    // A edição mais famosa (Vintage) só existe nesse acervo com 181 px de
+    // largura e ficava borrada ao ser exibida a 250 px. Esta tem 321 px.
+    capa: 'https://covers.openlibrary.org/b/id/13613167-L.jpg',
   },
 ]
 
