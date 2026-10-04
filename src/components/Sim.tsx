@@ -257,11 +257,14 @@ export default function Sim() {
 
   return (
     <figure className="m-0">
+      {/* Sem `h-full`: num item de grade esticado (o padrão no celular), o
+          canvas ocuparia a caixa toda do figure e a legenda transbordaria
+          para fora, ficando por baixo do bloco seguinte. */}
       <canvas
         ref={canvasRef}
         role="img"
         aria-label="Simulação de uma partida de futebol 2D: dez círculos se movem perseguindo uma bola."
-        className="block h-full w-full"
+        className="block w-full"
         style={{ aspectRatio: '105 / 68' }}
       />
       <figcaption className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[12px] text-muted tabular-nums">

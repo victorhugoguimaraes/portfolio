@@ -251,16 +251,16 @@ export default function Recomendador() {
         })
       }
 
-      // O nome do filme escolhido, esse sim por extenso.
+      // O nome do filme escolhido, por extenso — mas só se houver espaço.
+      // Num canvas de celular (≈340 px) esse rótulo ocupa um terço da largura
+      // e acaba por cima dos pontos; e o painel logo abaixo já diz qual é o
+      // filme. Então ele exige canvas largo E que o texto caiba.
       const extraAlvo = grupoAlvo.filmes.length > 1 ? ` +${grupoAlvo.filmes.length - 1}` : ''
-      const acima = pAlvo.y > h * 0.22
-      comHalo(
-        `${alvo.nome}${extraAlvo}`,
-        pAlvo.x,
-        acima ? pAlvo.y - 19 : pAlvo.y + 19,
-        cores.tinta,
-        'center',
-      )
+      const nome = `${alvo.nome}${extraAlvo}`
+      if (w >= 420 && ctx.measureText(nome).width < w * 0.45) {
+        const acima = pAlvo.y > h * 0.22
+        comHalo(nome, pAlvo.x, acima ? pAlvo.y - 19 : pAlvo.y + 19, cores.tinta, 'center')
+      }
     }
 
     // Desenha o estado final de saída, antes de qualquer coisa assíncrona.
@@ -301,11 +301,16 @@ export default function Recomendador() {
   return (
     <div className="grid gap-6 sm:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] sm:items-center sm:gap-9">
       <figure className="m-0">
+        {/* Sem `h-full`: num item de grade esticado (o padrão no celular, onde
+            não há items-center), altura 100% fazia o canvas ocupar a caixa
+            inteira do figure e o <figcaption> transbordava para fora — o
+            próximo item da grade era posicionado por cima dele. O aspect-ratio
+            com w-full já dá o tamanho certo. */}
         <canvas
           ref={canvasRef}
           role="img"
           aria-label={`Plano com ${grupos.length} posições de filmes. O filme ${alvo.nome} está destacado e ligado aos cinco mais parecidos: ${vizinhos.map((v) => v.filme.nome).join(', ')}.`}
-          className="block h-full w-full"
+          className="block w-full"
           style={{ aspectRatio: '1 / 1' }}
         />
         <figcaption className="mt-2 text-[12px] leading-relaxed text-muted">
